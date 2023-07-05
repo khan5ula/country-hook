@@ -23,11 +23,9 @@ const useCountry = (name) => {
     const fetchCountry = async () => {
       try {
         if (name) {
-          await axios
+          const response = await axios
             .get(`https://studies.cs.helsinki.fi/restcountries/api/name/${name}`)
-            .then(response => {
-              setCountry(response)
-            })
+          setCountry(response)
         } else {
           setCountry('')
         }
